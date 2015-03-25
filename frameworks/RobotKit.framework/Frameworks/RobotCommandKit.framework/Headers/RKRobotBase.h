@@ -8,6 +8,7 @@
 #import "RKDeviceResponse.h"
 #import "RKDeviceAsyncData.h"
 #import "RKVersioningResponse.h"
+#import "RKGoToSleepCommand.h"
 
 typedef void (^RKDeviceResponseBlock)(RKDeviceResponse* response);
 
@@ -25,7 +26,7 @@ typedef void (^RKDeviceResponseBlock)(RKDeviceResponse* response);
 -(void) streamCommand:(RKDeviceCommand*) command;
 -(void) sendCommand:(RKDeviceCommand *)command;
 
--(void) addResponseObserver:(id<RKResponseObserver>) observer;
+-(void) addResponseObserver:(__weak id<RKResponseObserver>) observer;
 -(void) removeResponseObserver:(id<RKResponseObserver>) observer;
 
 -(NSNumber*) connectTimeInSeconds;
@@ -33,8 +34,12 @@ typedef void (^RKDeviceResponseBlock)(RKDeviceResponse* response);
 
 -(BOOL) isConnected;
 
+-(BOOL) isOnline;
+
 /*! default sleep mode for a robot.  BTLE robots sleep is different from Classic Robots. */
 -(void) sleep;
+-(void) sleep:(RKSleepType)type;
+
 
 /*! request this robot disconnect */
 -(void) disconnect;
