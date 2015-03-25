@@ -23,10 +23,10 @@
 
 @end
 
-
-
-
 @interface RKSession : NSObject
+
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
 
 +(id) sessionWithDelegate:(id<RKSessionDelegate>) delegate;
 
@@ -34,7 +34,7 @@
 
 + (void)setMaxNativeSequenceNumber:(uint8_t)sequenceNumber;
 
--(NSData*) packetForCommand:(RKDeviceCommand*) command withACK:(BOOL) ack;
--(NSData*) packetForCommand:(RKDeviceCommand*) command;
+-(NSData*) generatePacketForCommand:(RKDeviceCommand*) command withAck:(BOOL) ack;
+-(NSData*) generatePacketForCommand:(RKDeviceCommand*) command;
 
 @end

@@ -79,7 +79,8 @@ typedef NS_ENUM(uint8_t, RKSpheroCommandIdType) {
     RKSpheroCommandRemoveCores = 0x71,
     RKSpheroCommandSetSSBUnlockFlagsBlock = 0x72,
     RKSpheroCommandResetSoulBlock = 0x73,
-    RKSpheroCommandReadOdometer = 0x75
+    RKSpheroCommandReadOdometer = 0x75,
+    RKSpheroCommandWritePersistentPage = 0x90
 };
 
 // commands for Sphero's soul

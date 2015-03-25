@@ -20,12 +20,12 @@
 @property ( nonatomic, readonly ) NSData *packedData;
 @property ( nonatomic, readonly ) NSString *designator;
 @property ( nonatomic, getter = isAsync, setter = setAsync: ) BOOL async;
+@property (nonatomic, assign, readwrite) uint8_t sequenceNumber;
 
 - (NSData *) packetize;
 - (uint8_t) calculatePacketDataLength;
 
 - (void) setTransmitTimeStamp:(NSTimeInterval) timeStamp;
-- (uint8_t)getSequenceNumber;
 
 // not all commands support this command.  Only Roll & RGB - intention is update DeviceCommand
 // to always store packets like Unity Plugin.

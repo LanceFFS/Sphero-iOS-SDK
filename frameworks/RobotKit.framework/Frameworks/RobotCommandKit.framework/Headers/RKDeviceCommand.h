@@ -17,9 +17,8 @@
 
 @property ( nonatomic, readonly ) NSTimeInterval transmitTimeStamp;
 @property (readwrite) BOOL async;
+@property (readonly) uint8_t sequenceNumber;
 
 - (BOOL) isAsync;
-
-- (uint8_t) getSequenceNumber;
 
 @end

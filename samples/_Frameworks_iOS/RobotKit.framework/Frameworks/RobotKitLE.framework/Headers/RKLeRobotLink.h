@@ -5,7 +5,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 #import <RobotCommandKit/RKLinkDelegate.h>
-#import "RKLESession.h"
+#import <RobotCommandKit/RKSession.h>
 #import "RKLeConnectStrategy.h"
 #import "RKLeBaseLink.h"
 
